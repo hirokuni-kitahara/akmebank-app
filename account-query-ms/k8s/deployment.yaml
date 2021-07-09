@@ -16,10 +16,10 @@ spec:
       labels:
         app: account-query-selector
     spec:
-      hostNetwork: true
+      #hostNetwork: true
       containers:
       - name: account-query
-        image: IMAGE_AND_TAG
+        image: QUR_IMAGE_AND_TAG
         imagePullPolicy: Always
         env:
         - name: CONFIG_MOUNT_PATH

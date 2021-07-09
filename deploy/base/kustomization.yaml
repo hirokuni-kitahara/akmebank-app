@@ -1,0 +1,7 @@
+namePrefix: akme-
+resources:
+    - ../../account-command-ms/k8s
+    - ../../account-query-ms/k8s
+    - ../../akmebank-ui/k8s
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

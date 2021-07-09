@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: akmebank-ui
-        image: IMAGE_AND_TAG
+        image: UI_IMAGE_AND_TAG
         imagePullPolicy: Always
         resources:
            limits:

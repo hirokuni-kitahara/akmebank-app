@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: account-command
-        image: IMAGE_AND_TAG
+        image: CMD_IMAGE_AND_TAG
         imagePullPolicy: Always
         env:
         - name: CONFIG_MOUNT_PATH
