@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Create issue using REST API
         run: |
+          echo Head Ref and Hash: ${{ github.head_ref }}.${{ github.sha }}
           curl --request POST \
           --url https://api.github.com/repos/gajananan/argocd-builder-action/dispatches \
           --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
