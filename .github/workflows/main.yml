@@ -1,0 +1,26 @@
+name: Close Pull Request
+
+# only trigger on pull request closed events
+on:
+  pull_request:
+    types: [ closed ]
+
+jobs:
+  trigger_argocd_builder_action:
+    # this job will only run if the PR has been merged
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issue using REST API
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/gajananan/argocd-builder-action/dispatches \
+          --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
+          --header "Accept: application/vnd.github.v3+json" \
+          --data '{ "event_type":"webhook"}' 
+          
+          
+      #- name: Get PR event number
+      #  run: echo PR ${{ github.event.number }} has been merged
+      #- name: Get head ref and commit id
+      #  run: echo ${{ github.head_ref }}.${{ github.sha }}
