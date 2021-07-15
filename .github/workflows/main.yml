@@ -17,9 +17,9 @@ jobs:
           --url https://api.github.com/repos/gajananan/argocd-builder-action/dispatches \
           --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
           --header "Accept: application/vnd.github.v3+json" \
-          --data '{ "event_type":"webhook", "client_payload": {"commit_hash": ${{ github.sha }} }}' 
+          --data '{ "event_type":"webhook", "client_payload": {"commit_hash": "this must be a hash value" }}' 
           
-          
+      # ${{ github.sha }}
       #- name: Get PR event number
       #  run: echo PR ${{ github.event.number }} has been merged
       #- name: Get head ref and commit id
