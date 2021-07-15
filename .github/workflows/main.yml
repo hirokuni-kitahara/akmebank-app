@@ -16,10 +16,10 @@ jobs:
           message=${{ github.head_ref }}.${{ github.sha }}
           echo Head Ref and Hash: $message
           curl --request POST \
-          --url https://api.github.com/repos/gajananan/argocd-builder-action/dispatches \
+          --url https://api.github.com/repos/gajananan/argo-github-action/dispatches \
           --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
           --header "Accept: application/vnd.github.v3+json" \
-          --data "{\"event_type\":\"webhook\", \"client_payload\": {\"commit_hash\": \"$message\" }}" 
+          --data "{\"event_type\":\"webhook\", \"client_payload\": {\"commit_hash\": \"$message\", \"argo-config\": \"https://github.com/gajananan/akmebank-config\" }}" 
           
       # ${{ github.sha }}
       #- name: Get PR event number
