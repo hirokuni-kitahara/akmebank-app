@@ -30,4 +30,4 @@ jobs:
           --url https://api.github.com/repos/gajananan/argo-github-action/dispatches \
           --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
           --header "Accept: application/vnd.github.v3+json" \
-          --data "{\"event_type\":\"webhook\", \"client_payload\": { \"roles\": [ {\"path\": \"/roles/dev\", \"image\": \"$dev_image\"}, {\"path\": \"/roles/stage\", \"image\": \"$stage_image\"},{\"path\": \"/roles/prod\", \"image\": \"$prod_image\"}],  \"commit_hash\": \"$message\", \"app\": \"$appId\", \"argo-config\": \"$argoconfig\", \"cluster-config\": \"$clusterconfig\" }}" 
+          --data "{\"event_type\":\"webhook\", \"client_payload\": { \"root\": \"roles/\", \"roles\": [ {\"path\": \"/roles/dev\", \"image\": \"$dev_image\"}, {\"path\": \"/roles/stage\", \"image\": \"$stage_image\"},{\"path\": \"/roles/prod\", \"image\": \"$prod_image\"}],  \"commit_hash\": \"$message\", \"app\": \"$appId\", \"argo-config\": \"$argoconfig\", \"cluster-config\": \"$clusterconfig\" }}" 
