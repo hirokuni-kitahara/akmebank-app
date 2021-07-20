@@ -1,13 +1,13 @@
 name: Close Pull Request
 
-# only trigger on pull request closed events
+# only trigger on pull request closed events   
 on:
   pull_request:
     types: [ closed ]
 
 jobs:
   trigger_argocd_builder_action:
-    # this job will only run if the PR has been merged        
+    # this job will only run if the PR has been merged                 
     if: github.event.pull_request.merged == true 
     runs-on: ubuntu-latest
     steps:
@@ -15,9 +15,10 @@ jobs:
         run: |
         
           # Required Parameters
-          message=${{ github.head_ref }}.${{ github.sha }}
+          #message=${{ github.head_ref }}.${{ github.sha }}
+          message=${{ github.sha }}
           appId="app1"
-          argoconfig="https://github.com/gajananan/argo-config"
+          argoconfig="https://github.com/gajananan/argo-config/tree/main/app1"
           clusterconfig="https://github.com/gajananan/argocd-cluster-config"
           dev_image="gcr.io/signing-demo-project/akeme-signed-dev:0.1"
           stage_image="gcr.io/signing-demo-project/akeme-signed-stage:0.1"
