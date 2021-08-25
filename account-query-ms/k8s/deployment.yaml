@@ -26,8 +26,8 @@ spec:
           value: /etc/config 
         resources:
            requests:
-             memory: 256Mi
-             cpu: 250m
+             memory: 64Mi
+             cpu: 50m
         volumeMounts:
         - name: cos-creds
           mountPath: /etc/config
