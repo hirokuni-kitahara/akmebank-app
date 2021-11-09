@@ -3,6 +3,6 @@ resources:
     - ../../account-command-ms/k8s
     - ../../account-query-ms/k8s
     - ../../akmebank-ui/k8s
-    - signature_secret.yaml
+    - ./signature_secret.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
