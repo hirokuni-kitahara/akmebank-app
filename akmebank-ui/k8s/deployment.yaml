@@ -20,6 +20,8 @@ spec:
       - name: akmebank-ui
         image: UI_IMAGE_AND_TAG
         imagePullPolicy: Always
+        securityContext:
+          privileged: true
         resources:
            limits:
              memory: 512Mi
