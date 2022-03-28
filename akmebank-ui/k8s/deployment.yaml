@@ -17,8 +17,8 @@ spec:
         app: akmebank-ui-selector
     spec:
       containers:
-      - name: akmebank-ui
-        image: UI_IMAGE_AND_TAG
+      - name: sample-container
+        image: SAMPLE_IMAGE_AND_TAG
         imagePullPolicy: Always
         securityContext:
           privileged: true
