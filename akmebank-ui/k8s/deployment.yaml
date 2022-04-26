@@ -29,3 +29,4 @@ spec:
            requests:
              memory: 64Mi
              cpu: 50m
+
